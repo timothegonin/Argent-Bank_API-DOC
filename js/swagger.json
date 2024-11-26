@@ -30,7 +30,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transactions"
+                  "$ref": "#/components/schemas/ArrayOfTransactions"
                 }
               }
             }
@@ -48,7 +48,7 @@
             "type": "integer"
           },
           "date": {
-            "type": "date"
+            "type": "string"
           },
           "description": {
             "type": "string"
@@ -60,6 +60,28 @@
             "type": "number"
           }
         }
+      },
+      "ArrayOfTransactions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Transactions"
+        },
+        "example": [
+          {
+            "id": 1,
+            "date": "2020-06-20",
+            "description": "Golden Sun Bakery",
+            "amount": 5.00,
+            "balance": 2082.79
+          },
+          {
+            "id": 2,
+            "date": "2020-06-20",
+            "description": "Golden Sun Bakery",
+            "amount": 10.00,
+            "balance": 2087.79
+          }
+        ]
       }
     }
   } 
