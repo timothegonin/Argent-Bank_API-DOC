@@ -34,6 +34,12 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Invalid Fields"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
