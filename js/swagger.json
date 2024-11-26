@@ -9,5 +9,58 @@
     {
       "url": "localhost:3001/api/v1"
     }
-  ]
+  ],
+  "tags": [
+    {
+      "name": "Transactions",
+      "description": "User Transactions API"
+    }
+  ],
+  "paths": {
+    "/user/transaction" : {
+      "get" :{
+        "tags": [
+          "Transactions"
+        ],
+        "summary" : "Fetch all transactions made by the user for the current month",
+        "operationId": "getTransactions",
+        "responses": {
+          "200": {
+            "description": "Return transactions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transactions"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas" : {
+      "Transactions" : {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "balance": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  } 
 }
