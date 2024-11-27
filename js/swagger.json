@@ -43,6 +43,33 @@
           }
         }
       }
+    },
+    "/user/accounts" : {
+      "get" :{
+        "tags": [
+          "Accounts"
+        ],
+        "summary" : "Fetch all user's accounts",
+        "operationId": "getAccounts",
+        "responses": {
+          "200": {
+            "description": "Return user's accounts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArrayOfAccounts"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Fields"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -86,6 +113,38 @@
             "description": "Golden Sun Bakery",
             "amount": 10.00,
             "balance": 2087.79
+          }
+        ]
+      },
+      "Accounts" : {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "balance": {
+            "type": "string"
+          }
+        }
+      },
+      "ArrayOfAccounts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Accounts"
+        },
+        "example": [
+          {
+            "id": 1,
+            "name": "Argent Bank Checking (x8349)",
+            "balance": 2082.79
+          },
+          {
+            "id": 2,
+            "name": "Argent Bank Savings (x67124)",
+            "balance": 10928.42
           }
         ]
       }
