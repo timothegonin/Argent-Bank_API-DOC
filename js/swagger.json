@@ -82,6 +82,14 @@
         ],
         "summary": "Updates information for an existing transaction",
         "operationId": "putTransaction",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Attach Bearer JWT token",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "description": "User transaction updated successfully",
@@ -205,6 +213,13 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
     }
   } 
 }
