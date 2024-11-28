@@ -28,6 +28,14 @@
         ],
         "summary": "Fetch all user's accounts",
         "operationId": "getAccounts",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Attach Bearer JWT token",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "description": "Return user's accounts",
@@ -55,6 +63,14 @@
         ],
         "summary": "Fetch all transactions made by the user for the current month",
         "operationId": "getTransactions",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Attach Bearer JWT token",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "description": "Return transactions",
