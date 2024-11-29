@@ -56,12 +56,12 @@
         }
       }
     },
-    "/user/transactions" : {
+    "/user/accounts/{acountId}/transactions" : {
       "get" :{
         "tags": [
           "Transactions"
         ],
-        "summary": "Fetch all transactions made by the user for the current month",
+        "summary": "Fetch all transactions associated with a specific account",
         "operationId": "getTransactions",
         "parameters": [
           {
@@ -91,12 +91,12 @@
         }
       }
     },
-    "/user/transaction/{transactionID}" : {
+    "/user/accounts/{accountId}/transactions/{transactionID}" : {
       "put" :{
         "tags": [
           "Transactions"
         ],
-        "summary": "Updates information for an existing transaction",
+        "summary": "Update the information of a specific transaction already existing",
         "operationId": "putTransaction",
         "parameters": [
           {
@@ -115,6 +115,17 @@
             }
           }
         ],
+        "requestBody": {
+          "description": "Update user transaction attributes",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransaction"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "User transaction updated successfully",
@@ -227,7 +238,7 @@
           }
         ]
       },
-      "UpdateTransactions": {
+      "UpdateTransaction": {
         "type": "object",
         "properties": {
           "category": {
