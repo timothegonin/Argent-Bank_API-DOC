@@ -91,7 +91,7 @@
         }
       }
     },
-    "/user/transaction" : {
+    "/user/transaction/{transactionID}" : {
       "put" :{
         "tags": [
           "Transactions"
@@ -104,6 +104,15 @@
             "name": "Authorization",
             "description": "Attach Bearer JWT token",
             "required": true
+          },
+          {
+            "in": "path",
+            "name": "transactionID",
+            "description": "ID of the transaction",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
