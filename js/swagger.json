@@ -190,7 +190,19 @@
               }
             }
           }
-        }
+        },
+        "example": [
+          {
+            "id": 1,
+            "name": "Argent Bank Checking (x8349)",
+            "balance": 2082.79
+          },
+          {
+            "id": 2,
+            "name": "Argent Bank Savings (x67124)",
+            "balance": 10928.42
+          }
+        ]
       },
       "TransactionsResponse": {
         "type": "object",
