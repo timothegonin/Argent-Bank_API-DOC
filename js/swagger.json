@@ -101,7 +101,7 @@
       }
     },
     "/user/accounts/{accountId}/transactions/{transactionID}" : {
-      "put" :{
+      "patch" :{
         "tags": [
           "Transactions"
         ],
@@ -139,7 +139,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateTransactionResponse"
+                "$ref": "#/components/schemas/UpdateTransaction"
               }
             }
           }
