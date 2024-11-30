@@ -186,7 +186,7 @@
                 "type": "string"
               },
               "balance": {
-                "type": "string"
+                "type": "integer"
               }
             }
           }
@@ -214,10 +214,10 @@
                 "type": "string"
               },
               "amount": {
-                "type": "number"
+                "type": "integer"
               },
               "balance": {
-                "type": "number"
+                "type": "integer"
               },
               "transactionType": {
                 "type": "string"
